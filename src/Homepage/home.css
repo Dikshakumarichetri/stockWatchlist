@@ -6,3 +6,18 @@
     height: 100vh;
     width: 60%;
 }
+img{
+    height: 200px;
+    width: auto;
+}
+image{
+    text-align: center;
+}
+h1,h2{
+    text-align: center;
+    margin: 40px 0px;
+    font-family: fantasy;
+}
+input{
+    margin-bottom: 30px;
+}

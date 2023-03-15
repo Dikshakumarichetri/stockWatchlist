@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Button, Table } from 'react-bootstrap';  
 
 const Watchlist = () => {
     const [stocks, setStocks] = useState([]);
@@ -40,14 +41,15 @@ const Watchlist = () => {
                     value={keyword}
                     onChange={handleKeywordChange}
                     placeholder="Search by keyword"
+
                 />
-                <table>
+                <Table striped bordered hover variant='light' responsive="lg" >
                     <thead>
                         <tr>
-                            <th>Symbol</th>
-                            <th>Name</th>
+                            <th>SYMBOL</th>
+                            <th>NAME</th>
 
-                            <th>Action</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,29 +61,29 @@ const Watchlist = () => {
 
                                 <td>
                                     {watchlist.some((item) => item.symbol === stock.symbol) ? (
-                                        <button
+                                        <Button 
+                                     variant="dark"
                                             onClick={() => handleRemoveFromWatchlist(stock)}
                                             disabled={watchlist.length === 1}
                                         >
                                             Remove
-                                        </button>
+                                        </Button>
                                     ) : (
-                                        <button onClick={() => handleAddToWatchlist(stock)}>Add</button>
+                                        <Button className="px-4" variant="primary" onClick={() => handleAddToWatchlist(stock)}>Add</Button>
                                     )}
                                 </td>
                             </tr>
 
                         ))}
                     </tbody>
-                </table>
+                </Table>
                 <h2>My Watchlist</h2>
-                <table>
+                <   Table striped bordered hover variant='light' responsive="lg">
                     <thead>
                         <tr>
-                            <th>Symbol</th>
+                            <th>SYMBOL</th>
                             <th>Name</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,16 +91,15 @@ const Watchlist = () => {
                             <tr key={stock.symbol}>
                                 <td>{stock.symbol}</td>
                                 <td>{stock.company}</td>
-                                <td>{stock.priceInfo}</td>
                                 <td>
-                                    <button onClick={() => handleRemoveFromWatchlist(stock)}>
+                                    <Button variant="dark"  onClick={() => handleRemoveFromWatchlist(stock)}>
                                         Remove
-                                    </button>
+                                    </Button>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                </Table>
             </div>
         </div>
     );
