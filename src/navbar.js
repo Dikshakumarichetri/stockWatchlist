@@ -12,7 +12,7 @@ function CollapsibleExample() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto"
-                    defaultActiveKey='/'      
+                
                                    >
                         <Nav.Link  href="/">Home</Nav.Link>
 
